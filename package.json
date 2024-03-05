@@ -1,0 +1,17 @@
+{
+  "name": "assessment-tradetracker",
+  "version": "1.0.0",
+  "description": "Sample test repository for tradetracker.com for assessment.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.42.1",
+    "@types/node": "^20.11.24"
+  }
+}
