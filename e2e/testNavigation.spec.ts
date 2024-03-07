@@ -1,7 +1,7 @@
 // This file contains navigation validations for
 
 import { test, expect } from "@playwright/test";
-import LandingPage from "../page_objects/landingPageConcept"
+import LandingPage from "../page_objects/landingPage"
 
 test("contact us navigation", async ({ page, baseURL }) => {
     test.fixme();
