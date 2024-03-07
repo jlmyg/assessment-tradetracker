@@ -11,3 +11,38 @@ Sample test repository for tradetracker.com for assessment.
   - Use Playwright.
   - Tests need to be possible to be executed using docker.
   - Also indicate which tests you would have liked to add if time was plentiful.
+
+### Test Plan Document
+  - Test Plan Document is sent via email to the assessment team. Please secure a copy to ensure that it is not publicly shared.
+
+### Running the tests
+
+  - #### Through ubuntu
+    - Make sure that the following pre-requisites are done:
+      - Install node.js and npm. You can check the [link here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm/)
+      - Once npm is installed, follow through the [installation process of playwright](https://playwright.dev/docs/intro)
+      - Run npm install from root directory.
+      - To be sure, you can also run npx playwright install-dependencies
+
+    - Once done, you may start running the test suite by running `npx playwright test`
+    - You can check the documentation from playwright on how to run other commands [here](https://playwright.dev/docs/running-tests).
+    - For this assessment, the e2e tests are located in the e2e folder. So to run the tests, use the command `npx playwright test e2e/` at root.
+    - Wait for the tests to finish executing.
+
+  - ### Through docker (any other OS)
+    - Ensure that docker is installed in your system. You can check the docs [here](https://docs.docker.com/engine/install/)
+    - Build the dockerfile by running the command `docker build -t image-name .`
+    - Since the entry point is set to blank, you have to create a container by doing `docker run image-name *playwright test command` wherein you append the test command you'd wish to execute.
+    - Wait for the tests to finish executing.
+
+### Getting the test results
+
+  - #### Through Ubuntu
+    - Locate the `playwright-report` folder that is generated.
+    - Inside the folder, an `index.html` file is generated. You can open that file through your desired html viewer.
+
+  - ### Through Docker
+    - Copy the container's files into your local machine by doing `docker cp <container-name-or-id>:/app <local-destination>`
+    - An `app` directory will be generated that contains the `playwright-report` directory with the respective `index.html` file.
+
+### 
