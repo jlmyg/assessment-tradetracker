@@ -16,6 +16,7 @@ Sample test repository for tradetracker.com for assessment.
   - Test Plan Document is sent via email to the assessment team. Please secure a copy to ensure that it is not publicly shared.
 
 ### Running the tests
+  ### Clone the repository
 
   - #### Through ubuntu
     - Make sure that the following pre-requisites are done:
