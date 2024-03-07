@@ -50,7 +50,7 @@ test("advertisers subpage navigation", async ({ page, baseURL }) => {
 
     await expect(page.getByRole('heading', {name: 'PAY ONLY FOR PERFORMANCE'})).toBeVisible({timeout: 10000});
 
-    expect(page.url()).toBe('https://tradetracker.com/advertisers/')
+    expect(page.url()).toBe('https://tradetracker.com/gb/advertisers/')
 
 
 })
@@ -79,6 +79,48 @@ test("about affiliate marketing subpage navigation", async ({ page, baseURL }) =
     await expect(page.getByRole('heading', {name: 'Affiliate marketing explained'})).toBeVisible({timeout: 10000});
 
     expect(page.url()).toBe('https://tradetracker.com/gb/about-affiliate-marketing/')
+
+
+})
+
+test("features real attribution subpage navigation", async ({ page, baseURL }) => {
+
+    const landingpage = new LandingPage(page);
+    await page.goto(`${baseURL}`);
+
+    await landingpage.navigateFeatures('realAttribution');
+
+    await expect(page.getByRole('heading', {name: 'INCREASE YOUR REVENUE WITH REAL ATTRIBUTION'})).toBeVisible({timeout: 10000});
+
+    expect(page.url()).toBe('https://tradetracker.com/gb/real-attribution/')
+
+
+})
+
+test("features mobile metrics subpage navigation", async ({ page, baseURL }) => {
+
+    const landingpage = new LandingPage(page);
+    await page.goto(`${baseURL}`);
+
+    await landingpage.navigateFeatures('mobileMetrics');
+
+    await expect(page.getByRole('heading', {name: 'Tracking Apps and Mobile Metrics'})).toBeVisible({timeout: 10000});
+
+    expect(page.url()).toBe('https://tradetracker.com/gb/mobile-metrics/')
+
+
+})
+
+test("features ad monitor subpage navigation", async ({ page, baseURL }) => {
+
+    const landingpage = new LandingPage(page);
+    await page.goto(`${baseURL}`);
+
+    await landingpage.navigateFeatures('adMonitor');
+
+    await expect(page.getByRole('heading', {name: 'Admonitor'})).toBeVisible({timeout: 10000});
+
+    expect(page.url()).toBe('https://tradetracker.com/gb/admonitor/')
 
 
 })

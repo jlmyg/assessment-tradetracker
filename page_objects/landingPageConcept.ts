@@ -12,11 +12,11 @@ export default class LandingPage{
     }
 
     async navigateSignupAdvertiser(){
-        await this.page.locator('#id_9postlk68_').click();
+        await this.page.locator('xpath=//a[normalize-space()="Sign up as Advertiser"]').click();
     }
 
     async navigateSignupPublisher(){
-        await this.page.locator('#id_8wr6c8tw42').click();
+        await this.page.locator('xpath=//a[normalize-space()="Sign up as Publisher"]').click();
     }
 
     async navigateContactUs(){
@@ -35,18 +35,20 @@ export default class LandingPage{
         await this.page.locator('xpath=//section[@class="vc_col-sm-12"]//a[normalize-space()="About Affiliate Marketing"]').click();
     }
 
-    // TODO: louis@bposeats.com
     async navigateFeatures(subpage){
-        await this.page.locator('xpath=//section[@class="vc_col-sm-12"]//a[normalize-space()="Features"]').click();
+        await this.page.locator('xpath=//section[@class="vc_col-sm-12"]//a[normalize-space()="Features"]').hover();
 
         if (subpage === 'realAttribution'){
-            await this.page.locator(`a[name="Real Attribution"]`).click();
+            await this.page.locator(`xpath=//section[@class='vc_col-sm-12']//a[normalize-space()='Real Attribution']`).hover();
+            await this.page.locator(`xpath=//section[@class='vc_col-sm-12']//a[normalize-space()='Real Attribution']`).click();
         }
         else if (subpage === 'mobileMetrics'){
-            await this.page.locator(`a[name="Mobile Metrics"]`).click();
+            await this.page.locator(`xpath=//section[@class='vc_col-sm-12']//a[normalize-space()='Mobile Metrics']`).hover();
+            await this.page.locator(`xpath=//section[@class='vc_col-sm-12']//a[normalize-space()='Mobile Metrics']`).click();
         }
         else if (subpage === 'adMonitor'){
-            await this.page.locator(`a[name="Admonitor"]`).click();
+            await this.page.locator(`xpath=//section[@class='vc_col-sm-12']//a[normalize-space()='Admonitor']`).hover();
+            await this.page.locator(`xpath=//section[@class='vc_col-sm-12']//a[normalize-space()='Admonitor']`).click();
         } else{
             console.error('Invalid subpage:', subpage);
         }
