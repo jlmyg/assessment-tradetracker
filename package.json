@@ -4,7 +4,7 @@
   "description": "Sample test repository for tradetracker.com for assessment.",
   "main": "index.js",
   "directories": {
-    "test": "tests"
+    "test": "e2e"
   },
   "scripts": {},
   "keywords": [],
