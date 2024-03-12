@@ -32,7 +32,7 @@ Sample test repository for tradetracker.com for assessment.
   - ### Through docker (any other OS)
     - Ensure that docker is installed in your system. You can check the docs [here](https://docs.docker.com/engine/install/)
     - Build the dockerfile by running the command `docker build -t image-name .`
-    - Since the entry point is set to blank, you have to create a container by doing `docker run image-name *playwright test command` wherein you append the test command you'd wish to execute.
+    - Since the entry point is set to blank, you have to create a container by doing `docker run image-name *playwright test command*` wherein you append the test command you'd wish to execute.
     - Wait for the tests to finish executing.
 
 ### Getting the test results
@@ -45,4 +45,15 @@ Sample test repository for tradetracker.com for assessment.
     - Copy the container's files into your local machine by doing `docker cp <container-name-or-id>:/app <local-destination>`
     - An `app` directory will be generated that contains the `playwright-report` directory with the respective `index.html` file.
 
-### 
+### Running the tests for the assessment
+
+  - #### Docker
+    - Run `docker build -t playwright-tests .`
+    - Wait for the build to finish.
+    - Run `docker run playwright-tests npx playwright test e2e/`
+    - Tests will be executed
+    - Run `docker container ps -a`
+    - Command will return the container id/name and make sure to copy either of the two as it will be needed for the test results
+    - Run `docker cp <container-name-or-id>:/app .`
+    - A directory named `app` will be generated
+    - Open the directory, navigate to `playwright-report` folder and then proceed to open the html file through an html viewer of your choice.
